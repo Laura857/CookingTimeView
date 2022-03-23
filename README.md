@@ -1,30 +1,38 @@
-# nodejs
+# CookingTimeView
+> Projet de 4 jours A5
+> 
+> Découverte de NodeJS + d'un framework front au choix (VueJs)
 
-> A Vue.js project
+NodejsProject est un projet qui permet de gérer des recettes. 
+Une fois connecté, l'utilisateur à la possibilité d'ajouter des recettes (titre, description, ingrédients, image). Il peut aussi gérer son profil en modifiant ses données personnelles et son mot de passe, ainsi que se déconnecter.
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+# Stacks
+- Vue.Js 3
+- Express.Js
 
-# serve with hot reload at localhost:8080
-npm run dev
+# Fonctionnalités développés
+- Authentification (inscription, déconnexion, appel d'api possible uniquement via token)
+- CRUD (get, put, delete, post pour la gestion des recettes)
+- Web Socket (pour notifiés l'utilisateur lors de l'ajout d'une recette)
+- Utilisation de Three.Js (un carré qui tourne lors de l'ajout d'une recette)
 
-# build for production with minification
-npm run build
+# Lancer l'application en local
+Cloner le repository
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+```
+git clone git@github.com:Laura857/NodejsProject.git
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Lancer les commandes suivantes: 
+
+```
+npm install
+npm run dev
+```
+Le server se lance et l'application est accessible depuis:  http://localhost:8080/#/
+
+# Environnement
+[CookingTimeView local](http://localhost:8080/#/)
+
+[CookingTimeView Qual](https://cooking-time-view.herokuapp.com)
