@@ -63,7 +63,7 @@ export default {
       const id = this.$route.params.id
       console.log('Appel get /cookingRecipe/' + id)
       axios
-        .get(`http://localhost:3000/cookingRecipe/${id}`)
+        .get(`${process.env.URL_API}/cookingRecipe/${id}`)
         .then(response => {
           console.log('Réponse get /cookingRecipe/', id, response)
           this.name = response.data.name
@@ -109,7 +109,7 @@ export default {
       const dataUpdate = {name: this.name, ingredients: this.ingredients, instruction: this.instruction, urlImage: this.urlImage}
       console.log('Appel put update cooking recipe avec : ', dataUpdate)
       axios
-        .put(`http://localhost:3000/cookingRecipe/${id}`, dataUpdate, config)
+        .put(`${process.env.URL_API}/cookingRecipe/${id}`, dataUpdate, config)
         .then(response => {
           console.log('Réponse put cookingRecipe', response)
           localStorage.removeItem('modeFormCookingRecipe')
@@ -127,7 +127,7 @@ export default {
       }
       console.log('Appel post create cooking recipe avec : ', dataCreate)
       axios
-        .post('http://localhost:3000/cookingRecipe/', dataCreate, config)
+        .post(`${process.env.URL_API}/cookingRecipe/`, dataCreate, config)
         .then(response => {
           console.log('Réponse de la création de recette ', response)
           localStorage.removeItem('modeFormCookingRecipe')

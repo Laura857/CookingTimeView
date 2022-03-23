@@ -62,6 +62,7 @@ export default {
     }
   },
   mounted () {
+    console.log(`Url api : ${process.env.URL_API}`)
     console.log('Au chargement de la page le local storage est : ', localStorage)
     if (localStorage.token) {
       this.pseudo = localStorage.pseudo

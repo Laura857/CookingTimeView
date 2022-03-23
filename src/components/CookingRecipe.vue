@@ -53,7 +53,7 @@ export default {
       const dataSearch = {name: this.$route.params.name}
       console.log('Appel /search : ', dataSearch)
       axios
-        .post('http://localhost:3000/cookingRecipe/search', dataSearch)
+        .post(`${process.env.URL_API}/cookingRecipe/search`, dataSearch)
         .then(response => {
           console.log('Réponse get /search', response.data)
           this.cookingRecipes = response.data
@@ -62,7 +62,7 @@ export default {
     } else {
       console.log('Appel get /cookingRecipe')
       axios
-        .get('http://localhost:3000/cookingRecipe')
+        .get(`${process.env.URL_API}/cookingRecipe`)
         .then(response => {
           console.log('Réponse de la recherche de toutes les recettes', response)
           this.cookingRecipes = response.data
@@ -93,7 +93,7 @@ export default {
               headers: { Authorization: `Bearer ${this.token}` }
             }
             axios
-              .delete('http://localhost:3000/cookingRecipe/' + cookingRecipe._id, config)
+              .delete(`${process.env.URL_API}/cookingRecipe/` + cookingRecipe._id, config)
               .then(response => {
                 console.log('Réponse delete /cookingRecipe', response)
                 window.location.reload()

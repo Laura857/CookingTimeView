@@ -45,9 +45,9 @@ export default {
       const config = {
         headers: { Authorization: `Bearer ${this.token}` }
       }
-      console.log(`Appel update password http://localhost:3000/user/${id} avec : `, updatePasswordData)
+      console.log(`Appel update password ${process.env.URL_API}/user/${id} avec : `, updatePasswordData)
       axios
-        .put(`http://localhost:3000/user/${id}`, updatePasswordData, config)
+        .put(`${process.env.URL_API}/user/${id}`, updatePasswordData, config)
         .then(response => {
           console.log('Réponse de la mise à jour du mot de passe ', response)
           this.$router.push('/')

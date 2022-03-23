@@ -58,9 +58,9 @@ export default {
       const config = {
         headers: { Authorization: `Bearer ${this.token}` }
       }
-      console.log(`Appel update user http://localhost:3000/user/${id} avec : `, updateUserData)
+      console.log(`Appel update user ${process.env.URL_API}/user/${id} avec : `, updateUserData)
       axios
-        .put(`http://localhost:3000/user/${id}`, updateUserData, config)
+        .put(`${process.env.URL_API}/user/${id}`, updateUserData, config)
         .then(response => {
           console.log('Réponse de la mise à jour du profil ', response)
           localStorage.setItem('pseudo', this.pseudo)

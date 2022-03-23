@@ -60,13 +60,13 @@ export default {
       const postDataSignup = {email: this.email, password: this.password, pseudo: this.pseudo}
       console.log('Appel put signup avec : ', postDataSignup)
       axios
-        .post('http://localhost:3000/user/signup', postDataSignup)
+        .post(`${process.env.URL_API}/user/signup`, postDataSignup)
         .then(response => {
           console.log('Réponse de l\'inscription ', response)
           // LOGIN
           const postDataLogin = {email: this.email, password: this.password}
           axios
-            .post('http://localhost:3000/user/login', postDataLogin)
+            .post(`${process.env.URL_API}/user/login`, postDataLogin)
             .then(response => {
               console.log('Réponse de la connexion ', response)
               localStorage.setItem('token', response.data.token)
